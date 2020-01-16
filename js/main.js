@@ -2,6 +2,7 @@
 const volumeControl = document.querySelector("#volume");
 const wavePicker = document.querySelector("#waveformPicker");
 const filterFreq = document.querySelector("#filterFreq");
+const filterQ = document.querySelector("#filterQ");
 const filterPicker = document.querySelector("#filterPicker");
 
 // Create audio context
@@ -61,6 +62,11 @@ filterPicker.addEventListener("change", () => {
 // Filter frequency range
 filterFreq.addEventListener("input", () => {
   filter.frequency.value = filterFreq.value;
+});
+
+// Filter Q range
+filterQ.addEventListener("input", () => {
+  filter.Q.value = filterQ.value;
 });
 
 // Start tone on load
