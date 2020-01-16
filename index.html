@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Web Synth</title>
+  </head>
+  <body>
+    <!-- Parameters -->
+    <section class="controls">
+      <label for="volume">Volume: </label>
+      <input
+        type="range"
+        name="volume"
+        id="volume"
+        min="0.0"
+        max="0.5"
+        step="0.01"
+        value="0.0"
+      />
+      <!-- Waveform picker -->
+      <label for="waveformPicker">Waveform: </label>
+      <select name="waveformPicker" id="waveformPicker">
+        <option value="sine" selected>Sine</option>
+        <option value="square">Square</option>
+        <option value="sawtooth">Sawtooth</option>
+        <option value="triangle">Triangle</option>
+      </select>
+    </section>
+  </body>
+</html>
