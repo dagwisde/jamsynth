@@ -1,6 +1,8 @@
 // Select elements
 const volumeControl = document.querySelector("#volume");
 const wavePicker = document.querySelector("#waveformPicker");
+const filterFreq = document.querySelector("#filterFreq");
+const filterPicker = document.querySelector("#filterPicker");
 
 // Create audio context
 let context = new (window.AudioContext || window.webkitAudioContext)();
@@ -10,8 +12,8 @@ let gainNode = context.createGain();
 
 // Create filter
 let filter = context.createBiquadFilter();
-filter.type = "highpass";
-filter.frequency.value = 1000;
+filter.type = filterPicker.value;
+filter.frequency.value = filterFreq.value;
 filter.gain.value = gainNode.gain.value;
 
 // Oscillators (notes correspond to C major chord)
@@ -49,6 +51,16 @@ wavePicker.addEventListener("input", () => {
   osc1.type = wavePicker.value;
   osc2.type = wavePicker.value;
   osc3.type = wavePicker.value;
+});
+
+// Filter selection
+filterPicker.addEventListener("change", () => {
+  filter.type = filterPicker.value;
+});
+
+// Filter frequency range
+filterFreq.addEventListener("input", () => {
+  filter.frequency.value = filterFreq.value;
 });
 
 // Start tone on load
