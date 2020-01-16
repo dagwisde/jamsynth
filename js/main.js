@@ -8,6 +8,12 @@ let context = new (window.AudioContext || window.webkitAudioContext)();
 // Create gain node (amplitude/volume)
 let gainNode = context.createGain();
 
+// Create filter
+let filter = context.createBiquadFilter();
+filter.type = "highpass";
+filter.frequency.value = 1000;
+filter.gain.value = gainNode.gain.value;
+
 // Oscillators (notes correspond to C major chord)
 // 1
 let osc1 = context.createOscillator();
@@ -22,10 +28,13 @@ let osc3 = context.createOscillator();
 osc3.type = wavePicker.value;
 osc3.frequency.value = 391.995;
 
-// Connect oscillators to gain node
-osc1.connect(gainNode);
-osc2.connect(gainNode);
-osc3.connect(gainNode);
+// Connect oscillators to filter node
+osc1.connect(filter);
+osc2.connect(filter);
+osc3.connect(filter);
+
+// Connect filter to gain node
+filter.connect(gainNode);
 
 // Connect gain to destination (speakers/output) & volume
 gainNode.connect(context.destination);
@@ -33,6 +42,13 @@ gainNode.gain.value = volumeControl.value;
 
 volumeControl.addEventListener("input", () => {
   gainNode.gain.value = volumeControl.value;
+});
+
+// Waveform selection
+wavePicker.addEventListener("input", () => {
+  osc1.type = wavePicker.value;
+  osc2.type = wavePicker.value;
+  osc3.type = wavePicker.value;
 });
 
 // Start tone on load
