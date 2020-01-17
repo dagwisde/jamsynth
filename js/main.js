@@ -157,6 +157,6 @@ filterDetune.addEventListener("input", () => {
 });
 
 // Start tone on load
-osc1.start();
-osc2.start();
-osc3.start();
+osc1.start(0);
+osc2.start(0);
+osc3.start(0);
