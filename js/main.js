@@ -47,20 +47,31 @@ let dataArray = new Uint8Array(bufferLength);
 
 function draw() {
   // Keep looping draw function
-  let drawVisual = requestAnimationFrame(draw);
+  requestAnimationFrame(draw);
+
   // Copy time data to array
   analyser.getByteTimeDomainData(dataArray);
+
   // Canvas fill color
-  canvasCtx.fillStyle = "rgb(200, 200, 200)";
+  canvasCtx.fillStyle = "#08143E";
   canvasCtx.fillRect(0, 0, 500, 150);
+
+  // Stroke gradient
+  let gradient = canvasCtx.createLinearGradient(0, 0, 170, 0);
+  gradient.addColorStop("0", "#632351");
+  gradient.addColorStop("0.5", "#D80545");
+  gradient.addColorStop("1.0", "#F77276");
+
   // Set width and style of stroke
-  canvasCtx.lineWidth = 2;
-  canvasCtx.strokeStyle = "rgb(0, 0, 0)";
+  canvasCtx.lineWidth = 3;
+  canvasCtx.strokeStyle = gradient;
   canvasCtx.beginPath();
+
   // Width of each line segment
   let sliceWidth = (500 * 1.0) / bufferLength;
   // Position to draw each segment of the line from
   let x = 0;
+
   // Loop through buffer, defining each segment of the waveform
   for (let i = 0; i < bufferLength; i++) {
     let v = dataArray[i] / 128.0;
