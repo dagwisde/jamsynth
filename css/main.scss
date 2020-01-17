@@ -1,10 +1,13 @@
-body {
+.main {
     background-color: #08143E;
-
+    color: white;
+    display: flex;
+    flex-direction: column;
+    padding: 1em;
 }
 
 #visualizer {
     border-radius: 1em;
     background-color: #08143E;
-
+    margin: 0 auto;
 }

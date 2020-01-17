@@ -1,9 +1,19 @@
-body {
+.main {
   background-color: #08143E;
+  color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 1em;
 }
 
 #visualizer {
   border-radius: 1em;
   background-color: #08143E;
+  margin: 0 auto;
 }
 /*# sourceMappingURL=main.css.map */

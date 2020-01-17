@@ -4,6 +4,7 @@ const wavePicker = document.querySelector("#waveformPicker");
 const filterFreq = document.querySelector("#filterFreq");
 const filterQ = document.querySelector("#filterQ");
 const filterPicker = document.querySelector("#filterPicker");
+let filterDetune = document.querySelector("#filterDetune");
 let canvas = document.querySelector("#visualizer");
 let canvasCtx = canvas.getContext("2d");
 
@@ -18,6 +19,7 @@ let filter = context.createBiquadFilter();
 filter.type = filterPicker.value;
 filter.frequency.value = filterFreq.value;
 filter.gain.value = gainNode.gain.value;
+filter.detune.value = filterDetune.value;
 
 // Oscillators (notes correspond to C major chord)
 // 1
@@ -52,6 +54,10 @@ function draw() {
   // Copy time data to array
   analyser.getByteTimeDomainData(dataArray);
 
+  // Responsive canvas
+  canvas.width = document.documentElement.clientWidth * 0.75;
+  canvas.height = document.documentElement.clientHeight * 0.3;
+
   // Canvas fill color
   canvasCtx.fillStyle = "#08143E";
   canvasCtx.fillRect(0, 0, 500, 150);
@@ -68,7 +74,7 @@ function draw() {
   canvasCtx.beginPath();
 
   // Width of each line segment
-  let sliceWidth = (500 * 1.0) / bufferLength;
+  let sliceWidth = (500 * 4.0) / bufferLength;
   // Position to draw each segment of the line from
   let x = 0;
 
@@ -143,6 +149,11 @@ filterFreq.addEventListener("input", () => {
 // Filter Q range
 filterQ.addEventListener("input", () => {
   filter.Q.value = filterQ.value;
+});
+
+// Filter detune range
+filterDetune.addEventListener("input", () => {
+  filter.detune.value = filterDetune.value;
 });
 
 // Start tone on load
