@@ -11,77 +11,86 @@
     <link rel="stylesheet" href="./css/reset.css" />
   </head>
   <body>
+    <!-- Main container -->
     <main class="main">
       <!-- Visualization -->
       <canvas id="visualizer" height="150" width="500"></canvas>
-      <!-- Parameters -->
-      <section class="paramControls">
-        <label for="volume">Volume: </label>
-        <input
-          type="range"
-          name="volume"
-          id="volume"
-          min="0.0"
-          max="0.5"
-          step="0.01"
-          value="0.0"
-        />
-        <!-- Waveform picker -->
-        <label id="waveformLabel" for="waveformPicker">Waveform: </label>
-        <select name="waveformPicker" id="waveformPicker">
-          <option value="sine" selected>Sine</option>
-          <option value="square">Square</option>
-          <option value="sawtooth">Sawtooth</option>
-          <option value="triangle">Triangle</option>
-        </select>
+
+      <!-- Controls container -->
+      <div class="controlContainer">
+        <!-- Parameters -->
+        <section class="paramControls">
+          <label for="volume">Volume: </label>
+          <input
+            type="range"
+            name="volume"
+            id="volume"
+            min="0.0"
+            max="0.5"
+            step="0.01"
+            value="0.0"
+          />
+          <!-- Waveform picker -->
+          <label id="waveformLabel" for="waveformPicker">Waveform: </label>
+          <select name="waveformPicker" id="waveformPicker">
+            <option value="sine" selected>Sine</option>
+            <option value="square">Square</option>
+            <option value="sawtooth">Sawtooth</option>
+            <option value="triangle">Triangle</option>
+          </select>
+        </section>
+
         <!-- Filters -->
-      </section>
-      <section class="filterControls">
-        <label for="filter">Filter: </label>
-        <select name="filterPicker" id="filterPicker">
-          <option value="lowpass">Lowpass</option>
-          <option value="highpass">Highpass</option>
-          <option value="bandpass">Bandpass </option>
-          <option value="lowshelf">Lowshelf</option>
-          <option value="highshelf">Highshelf</option>
-          <option value="notch">Notch</option>
-          <option value="peaking">Peaking</option>
-          <option value="allpass">Allpass</option>
-        </select>
-        <!-- Cutoff -->
-        <label for="filterFreq">Cutoff: </label>
-        <input
-          type="range"
-          name="filterFreq"
-          id="filterFreq"
-          min="0"
-          max="2205"
-          step="1"
-          value="350"
-        />
-        <!-- Q -->
-        <label for="filterQ">Q</label>
-        <input
-          type="range"
-          name="filterQ"
-          id="filterQ"
-          min="0"
-          max="300"
-          value="1"
-          step="0.1"
-        />
-        <!-- Detune -->
-        <label for="filterDetune">Detune: </label>
-        <input
-          type="range"
-          name="filterDetune"
-          id="filterDetune"
-          min="-1000"
-          max="1000"
-          step="1"
-          value="0"
-        />
-      </section>
+        <section class="filterControls">
+          <label for="filter">Filter: </label>
+          <select name="filterPicker" id="filterPicker">
+            <option value="lowpass">Lowpass</option>
+            <option value="highpass">Highpass</option>
+            <option value="bandpass">Bandpass </option>
+            <option value="lowshelf">Lowshelf</option>
+            <option value="highshelf">Highshelf</option>
+            <option value="notch">Notch</option>
+            <option value="peaking">Peaking</option>
+            <option value="allpass">Allpass</option>
+          </select>
+
+          <!-- Cutoff -->
+          <label for="filterFreq">Cutoff: </label>
+          <input
+            type="range"
+            name="filterFreq"
+            id="filterFreq"
+            min="0"
+            max="2205"
+            step="1"
+            value="350"
+          />
+
+          <!-- Q -->
+          <label for="filterQ">Q</label>
+          <input
+            type="range"
+            name="filterQ"
+            id="filterQ"
+            min="0"
+            max="300"
+            value="1"
+            step="0.1"
+          />
+
+          <!-- Detune -->
+          <label for="filterDetune">Detune: </label>
+          <input
+            type="range"
+            name="filterDetune"
+            id="filterDetune"
+            min="-1000"
+            max="1000"
+            step="1"
+            value="0"
+          />
+        </section>
+      </div>
     </main>
     <!-- Script -->
     <script src="./js/main.js"></script>

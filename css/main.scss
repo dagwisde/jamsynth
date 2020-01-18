@@ -1,13 +1,56 @@
+/********************
+    General
+*********************/
+
 .main {
     background-color: #08143E;
     color: white;
     display: flex;
     flex-direction: column;
     padding: 1em;
+    flex-basis: 75%;
+    border-radius: 1em;
+    margin: 2em;
 }
+
+/********************
+    Visualizer
+*********************/
 
 #visualizer {
     border-radius: 1em;
     background-color: #08143E;
     margin: 0 auto;
+    width: 100%;
+}
+
+/********************
+    Controls 
+*********************/
+
+.controlContainer {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.paramControls {
+    display: flex;
+    flex-flow: column wrap;
+    border-radius: 0.8em;
+    margin: 1em;
+    padding: 2em;
+    width: 600px;
+    flex: 1;
+    border: 3px solid #4B4642;
+}
+
+.filterControls {
+    display: flex;
+    flex-direction: column;
+    margin: 1em;
+    padding: 2em;
+    border: 3px solid #4B4642;
+    border-radius: 0.8em;
+    flex: 1;
+    width: 600px;
 }

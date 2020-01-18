@@ -38,6 +38,7 @@ osc3.frequency.value = 391.995;
 /*================
     Visualizer
 ==================*/
+
 // Create analyser node
 let analyser = context.createAnalyser();
 // Capture audio data using specific frequency domain
