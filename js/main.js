@@ -122,6 +122,7 @@ gainNode.gain.value = volumeControl.value;
     Gain & Waveform
 ====================*/
 
+// Gain
 volumeControl.addEventListener("input", () => {
   gainNode.gain.value = volumeControl.value;
 });

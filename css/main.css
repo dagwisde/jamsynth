@@ -1,9 +1,13 @@
 /********************
     General
 *********************/
+body {
+  background-color: #AAB8BB;
+}
+
 .main {
-  background-color: #08143E;
-  color: white;
+  background-color: #2D325A;
+  color: #E55767;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -75,5 +79,18 @@
       -ms-flex: 1;
           flex: 1;
   width: 600px;
+}
+
+.fold {
+  margin: 1em;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column wrap;
+          flex-flow: column wrap;
+  color: #fafafa;
+  border-radius: 0.5em;
 }
 /*# sourceMappingURL=main.css.map */
