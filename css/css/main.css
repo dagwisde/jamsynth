@@ -1,7 +1,6 @@
 /********************
     General
 *********************/
-
 body {
   background-color: #AAB8BB;
 }
@@ -13,32 +12,26 @@ body {
   flex-direction: column;
   padding: 1em;
   flex-basis: 75%;
-  border-radius: 0.3em;
+  border-radius: 1em;
   margin: 2em;
-  -webkit-box-shadow: 5px 5px 7px 0px #2D325A;
-  box-shadow: 5px 5px 7px 0px #2D325A;
 }
 
 /********************
     Visualizer
 *********************/
-
 #visualizer {
   border-radius: 1em;
   background-color: #08143e;
   margin: 0 auto;
   width: 100%;
-
 }
 
 /********************
     Controls 
 *********************/
-
 .controlContainer {
   display: flex;
   flex-flow: row wrap;
-
 }
 
 .paramControls {
@@ -61,7 +54,6 @@ body {
   flex: 1;
 }
 
-// Accordion
 .fold {
   margin: 1em;
   flex: 1;
@@ -69,3 +61,7 @@ body {
   color: #fafafa;
   border-radius: 0.5em;
 }
+
+/*# sourceMappingURL=main.css.map */
+
+/*# sourceMappingURL=main.css.map */

@@ -1,12 +1,12 @@
 // Select elements
-const volumeControl = document.querySelector("#volume");
-const wavePicker = document.querySelector("#waveformPicker");
-const filterFreq = document.querySelector("#filterFreq");
-const filterQ = document.querySelector("#filterQ");
-const filterPicker = document.querySelector("#filterPicker");
-let filterDetune = document.querySelector("#filterDetune");
-let canvas = document.querySelector("#visualizer");
-let canvasCtx = canvas.getContext("2d");
+const volumeControl = document.querySelector('#volume');
+const wavePicker = document.querySelector('#waveformPicker');
+const filterFreq = document.querySelector('#filterFreq');
+const filterQ = document.querySelector('#filterQ');
+const filterPicker = document.querySelector('#filterPicker');
+let filterDetune = document.querySelector('#filterDetune');
+let canvas = document.querySelector('#visualizer');
+let canvasCtx = canvas.getContext('2d');
 
 // Create audio context
 let context = new (window.AudioContext || window.webkitAudioContext)();
@@ -60,14 +60,14 @@ function draw() {
   canvas.height = document.documentElement.clientHeight * 0.3;
 
   // Canvas fill color
-  canvasCtx.fillStyle = "#08143E";
+  canvasCtx.fillStyle = '#08143E';
   canvasCtx.fillRect(0, 0, 500, 150);
 
   // Stroke gradient
   let gradient = canvasCtx.createLinearGradient(0, 0, 170, 0);
-  gradient.addColorStop("0", "#632351");
-  gradient.addColorStop("0.5", "#D80545");
-  gradient.addColorStop("1.0", "#F77276");
+  gradient.addColorStop('0', '#632351');
+  gradient.addColorStop('0.5', '#D80545');
+  gradient.addColorStop('1.0', '#F77276');
 
   // Set width and style of stroke
   canvasCtx.lineWidth = 3;
@@ -123,12 +123,12 @@ gainNode.gain.value = volumeControl.value;
 ====================*/
 
 // Gain
-volumeControl.addEventListener("input", () => {
+volumeControl.addEventListener('input', () => {
   gainNode.gain.value = volumeControl.value;
 });
 
 // Waveform selection
-wavePicker.addEventListener("input", () => {
+wavePicker.addEventListener('input', () => {
   osc1.type = wavePicker.value;
   osc2.type = wavePicker.value;
   osc3.type = wavePicker.value;
@@ -139,22 +139,22 @@ wavePicker.addEventListener("input", () => {
 ==================*/
 
 // Filter selection
-filterPicker.addEventListener("change", () => {
+filterPicker.addEventListener('change', () => {
   filter.type = filterPicker.value;
 });
 
 // Filter frequency range
-filterFreq.addEventListener("input", () => {
+filterFreq.addEventListener('input', () => {
   filter.frequency.value = filterFreq.value;
 });
 
 // Filter Q range
-filterQ.addEventListener("input", () => {
+filterQ.addEventListener('input', () => {
   filter.Q.value = filterQ.value;
 });
 
 // Filter detune range
-filterDetune.addEventListener("input", () => {
+filterDetune.addEventListener('input', () => {
   filter.detune.value = filterDetune.value;
 });
 
