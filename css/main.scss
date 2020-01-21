@@ -1,8 +1,12 @@
+// Font import
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
 /********************
     General
 *********************/
 
 .main {
+  font-family: 'Roboto', sans-serif;
   background-color: #2d325a;
   color: #e55767;
   display: flex;
@@ -35,6 +39,7 @@
 .controlContainer {
   display: flex;
   flex-flow: row wrap;
+  font-size: 1.25rem;
 }
 
 .paramControls {

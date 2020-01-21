@@ -1,7 +1,9 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto&display=swap");
 /********************
     General
 *********************/
 .main {
+  font-family: 'Roboto', sans-serif;
   background-color: #2d325a;
   color: #e55767;
   display: -webkit-box;
@@ -41,6 +43,7 @@
   -webkit-box-direction: normal;
       -ms-flex-flow: row wrap;
           flex-flow: row wrap;
+  font-size: 1.25rem;
 }
 
 .paramControls {
